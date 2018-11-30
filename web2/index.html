@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>basic ajax 크롤링</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+$(function() {
+    $.get("test_data.json").done(function(test_data) {
+        $.each(test_data, function(idx, data1) {
+            var html = '<li class="data1">' + data1.name + '</li>';
+            $('#crawling_list').append($(html));
+        });
+    });
+});
+</script>
+</head>
+<body>
+<h1>기본 목록</h1>
+
+<h2>Ajax 크롤링 데이터</h2>
+
+<p>Ajax 테스트</p>
+
+<ul id="crawling_list">
+</ul>
+<hr/>
+
+</body>
+</html>
